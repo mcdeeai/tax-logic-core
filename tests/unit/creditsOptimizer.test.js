@@ -1,7 +1,6 @@
 
 import { describe, it, expect } from 'vitest';
 import { analyzeCreditsOptimizations } from '../../src/optimizations/creditsOptimizer.js';
-import { CATEGORY } from '../../src/optimizations/taxOptimizer.js';
 
 describe('Credits Optimizer', () => {
 

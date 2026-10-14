@@ -1,8 +1,6 @@
 
 import { describe, it, expect } from 'vitest';
 import { analyzeFilingStatusOptimizations, checkHOHEligibility } from '../../src/optimizations/filingStatusOptimizer.js';
-import { CATEGORY } from '../../src/optimizations/taxOptimizer.js';
-import { STANDARD_DEDUCTIONS_2025 } from '../../src/calculations/calculateTax.js';
 
 describe('Filing Status Optimizer', () => {
 

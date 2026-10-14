@@ -52,7 +52,7 @@ console.log(`Potential Savings: $${optimizations.totalPotentialSavings}`);
 - **State Income Tax** (50 states + DC)
 - **Self-Employment Tax** (Schedule SE)
 - **Capital Gains Tax** (0%, 15%, 20% brackets)
-- **Alternative Minimum Tax** (AMT)
+- **Alternative Minimum Tax**: exposure screening only (`analyzeAMTOptimizations`); `calculateTotalTax` does not compute AMT
 - **Net Investment Income Tax** (NIIT - 3.8%)
 
 ### Optimization Strategies
@@ -87,14 +87,15 @@ const qbi = getAuthority('qbiDeduction');
 ### Tax Calculations
 
 ```javascript
-import { 
+import {
   calculateTotalTax,
-  calculateFederalIncomeTax,
-  calculateStateTax,
+  calculateTaxWithOverrides,
   calculateSelfEmploymentTax,
   calculateCapitalGainsTax,
-  calculateAMT
 } from 'tax-logic-core/calculations';
+
+// State tax is exported from the package root
+import { calculateStateTax } from 'tax-logic-core';
 ```
 
 ### Optimizations
@@ -158,18 +159,14 @@ Other notable behaviors:
 
 ## Testing
 
-This repo uses Vitest. Run tests locally with:
+This repo uses Vitest and Bun. Run tests locally with:
 
 ```bash
-npm test
+bun install
+bun run test
 ```
 
-If you encounter worker/thread issues in constrained environments, try one of:
-
-```bash
-vitest --run --pool=forks
-vitest --run --threads=false
-```
+If you hit worker/thread issues in a constrained environment, try `bun run test -- --pool=forks`.
 
 Core areas covered by unit tests include:
 

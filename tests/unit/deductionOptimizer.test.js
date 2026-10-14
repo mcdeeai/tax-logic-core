@@ -2,7 +2,6 @@
 import { describe, it, expect } from 'vitest';
 import { analyzeDeductionOptimizations } from '../../src/optimizations/deductionOptimizer.js';
 import { STANDARD_DEDUCTIONS_2025 } from '../../src/calculations/calculateTax.js';
-import { CATEGORY } from '../../src/optimizations/taxOptimizer.js';
 
 describe('Deduction Optimizer', () => {
 

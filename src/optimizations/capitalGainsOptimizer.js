@@ -3,7 +3,7 @@
  * Analyzes tax-loss harvesting, 0% bracket harvesting, NIIT planning, and more
  */
 
-import { calculateTotalTax, calculateCapitalGainsTax, CAPITAL_GAINS_BRACKETS_2025 } from '../calculations/calculateTax.js';
+import { calculateTotalTax } from '../calculations/calculateTax.js';
 import { DIFFICULTY, CATEGORY } from './taxOptimizer.js';
 
 // 2025 Capital Gains Thresholds

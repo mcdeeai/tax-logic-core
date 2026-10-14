@@ -3,7 +3,7 @@
  * Analyzes itemized vs standard deduction, SALT cap, charitable bunching, and more
  */
 
-import { calculateTotalTax, calculateTaxWithOverrides, STANDARD_DEDUCTIONS_2025 } from '../calculations/calculateTax.js';
+import { calculateTotalTax, STANDARD_DEDUCTIONS_2025 } from '../calculations/calculateTax.js';
 import { DIFFICULTY, CATEGORY } from './taxOptimizer.js';
 
 // 2025 SALT cap (increased from $10K to $40K by OBBBA)

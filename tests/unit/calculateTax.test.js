@@ -6,7 +6,6 @@ import {
     calculateNIIT,
     calculateTotalTax,
     TAX_BRACKETS_2025,
-    CAPITAL_GAINS_BRACKETS_2025
 } from '../../src/calculations/calculateTax.js';
 
 describe('Tax Logic Core - Calculations', () => {
