@@ -1,7 +1,6 @@
 import { describe, it, expect } from 'vitest';
 import {
     analyzeTaxOptimizations,
-    DIFFICULTY,
     CATEGORY
 } from '../../src/optimizations/taxOptimizer.js';
 

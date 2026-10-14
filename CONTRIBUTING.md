@@ -80,23 +80,26 @@ We need more test cases covering:
 
 ```bash
 # Clone the repository
-git clone https://github.com/rsathyam/tax-logic-core.git
+git clone https://github.com/mcdeeai/tax-logic-core.git
 cd tax-logic-core
 
 # Install dependencies
-npm install
+bun install
 
 # Run tests
-npm test
+bun run test
 
 # Run linting
-npm run lint
+bun run lint
+
+# Check that every published entry point loads in plain Node
+bun run check:exports
 ```
 
 ### Prerequisites
 
-- Node.js 18+
-- npm 9+
+- Node.js 20.19+ (for `require()` of ES modules)
+- Bun 1.3+
 
 ---
 
@@ -181,7 +184,7 @@ return income * rate;
 3. **Make changes** following our coding standards
 4. **Add tests** for new functionality
 5. **Update documentation** as needed
-6. **Run tests** (`npm test`)
+6. **Run tests** (`bun run test`)
 7. **Submit PR** with clear description
 
 ### PR Title Format

@@ -12,7 +12,6 @@ import {
     WASHINGTON_CAPITAL_GAINS,
     CALIFORNIA_MENTAL_HEALTH_TAX,
     STATE_TAX_BRACKETS,
-    calculateStateTax,
     calculateWashingtonCapitalGainsTax,
     getStateName,
 } from '../stateData/stateTaxRates.js';
@@ -30,13 +29,10 @@ import {
     has529Benefit,
 } from '../stateData/state529Plans.js';
 import {
-    COMMUNITY_PROPERTY_STATES,
     isCommunityPropertyState,
     analyzeCaliforniaMentalHealthTax,
 } from '../stateData/communityPropertyStates.js';
 import {
-    isSSFullyExempt,
-    calculateSSStateExclusion,
     getStateRetirementSummary,
 } from '../stateData/stateRetirementExclusions.js';
 

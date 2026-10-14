@@ -5,7 +5,7 @@
 
 import { calculateTotalTax } from '../calculations/calculateTax.js';
 import { DIFFICULTY, CATEGORY } from './taxOptimizer.js';
-import { formatAuthorityForDisplay, TAX_AUTHORITY } from '../utils/taxAuthority.js';
+import { formatAuthorityForDisplay } from '../utils/taxAuthority.js';
 
 // 2025 AMT Parameters
 const AMT_2025 = {

@@ -25,23 +25,23 @@
  * ============================================================================
  */
 
-import { calculateTotalTax, calculateTaxWithOverrides, STANDARD_DEDUCTIONS_2025 } from '../calculations/calculateTax.js';
-import { analyzeFilingStatusOptimizations } from './filingStatusOptimizer';
-import { analyzeDeductionOptimizations } from './deductionOptimizer';
-import { analyzeRetirementOptimizations } from './retirementOptimizer';
-import { analyzeCreditsOptimizations } from './creditsOptimizer';
-import { analyzeSelfEmploymentOptimizations } from './selfEmploymentOptimizer';
-import { analyzeCapitalGainsOptimizations } from './capitalGainsOptimizer';
-import { analyzeStateOptimizations } from './stateOptimizer';
+import { calculateTotalTax } from '../calculations/calculateTax.js';
+import { analyzeFilingStatusOptimizations } from './filingStatusOptimizer.js';
+import { analyzeDeductionOptimizations } from './deductionOptimizer.js';
+import { analyzeRetirementOptimizations } from './retirementOptimizer.js';
+import { analyzeCreditsOptimizations } from './creditsOptimizer.js';
+import { analyzeSelfEmploymentOptimizations } from './selfEmploymentOptimizer.js';
+import { analyzeCapitalGainsOptimizations } from './capitalGainsOptimizer.js';
+import { analyzeStateOptimizations } from './stateOptimizer.js';
 // New optimizers added for 2025 audit
-import { analyzeAugustaRuleOptimization } from './augustaRuleOptimizer';
-import { analyzeK1Optimizations } from './k1Optimizer';
-import { analyzeAMTOptimizations } from './amtOptimizer';
+import { analyzeAugustaRuleOptimization } from './augustaRuleOptimizer.js';
+import { analyzeK1Optimizations } from './k1Optimizer.js';
+import { analyzeAMTOptimizations } from './amtOptimizer.js';
 // State PTET and special tax optimizers
-import { analyzeStatePTETOptimizations } from './statePTETOptimizer';
-import { analyzeCryptoTaxOptimizations } from './cryptoTaxOptimizer';
-import { analyzeRealEstateProfessionalOptimizations } from './realEstateProfessionalOptimizer';
-import { analyzeInternationalTaxOptimizations } from './internationalTaxOptimizer';
+import { analyzeStatePTETOptimizations } from './statePTETOptimizer.js';
+import { analyzeCryptoTaxOptimizations } from './cryptoTaxOptimizer.js';
+import { analyzeRealEstateProfessionalOptimizations } from './realEstateProfessionalOptimizer.js';
+import { analyzeInternationalTaxOptimizations } from './internationalTaxOptimizer.js';
 
 
 // ============================================================================

@@ -6,10 +6,7 @@
     "module": "src/index.js",
     "type": "module",
     "exports": {
-        ".": {
-            "import": "./src/index.js",
-            "require": "./src/index.cjs"
-        },
+        ".": "./src/index.js",
         "./calculations": "./src/calculations/index.js",
         "./optimizations": "./src/optimizations/index.js",
         "./authority": "./src/utils/taxAuthority.js"
@@ -20,10 +17,11 @@
         "LICENSE"
     ],
     "scripts": {
-        "test": "vitest",
-        "test:coverage": "vitest --coverage",
-        "lint": "eslint src/",
-        "build": "echo 'No build step required for ESM'"
+        "test": "vitest run",
+        "test:watch": "vitest",
+        "test:coverage": "vitest run --coverage",
+        "lint": "eslint src/ tests/",
+        "check:exports": "node scripts/check-exports.mjs"
     },
     "keywords": [
         "tax",
@@ -50,10 +48,13 @@
     },
     "homepage": "https://github.com/rsathyam/tax-logic-core#readme",
     "devDependencies": {
+        "@eslint/js": "^9.0.0",
         "eslint": "^9.0.0",
+        "globals": "^15.0.0",
         "vitest": "^2.0.0"
     },
     "engines": {
-        "node": ">=18.0.0"
-    }
+        "node": ">=20.19.0"
+    },
+    "packageManager": "bun@1.3.14"
 }
