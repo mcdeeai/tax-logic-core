@@ -59,15 +59,16 @@ Each item links to its ledger, which has the exact location, the value in the co
 
 **Docs:** the README calls `useObbba2025: false` "current law", but OBBBA is enacted law for 2025, so false is really a pre-OBBBA comparison scenario.
 
-## Decisions needed before fixing
+## Decisions
 
-The ledgers raise these product questions. The answers change what "correct" means for many rows.
+1. **Estimator or return-equivalent?** **Decided: quick estimator** ([ADR 0001](../adr/0001-quick-estimator-scope.md)). Rows that only matter for an exact return (Tax Table rounding, full AMT, exact ACTC, Form 8959, per-spouse data, rare eligibility cases) are closed as out of scope. Every row that changes a common-case estimate gets fixed.
 
-1. **Estimator or return-equivalent?** Return-equivalent requires IRS tax tables and rounding, AMT, ACTC, Additional Medicare tax on wages, and per-spouse data. An estimator can document what it leaves out instead.
-2. **Input contract.** Are fields like mortgage interest, charitable gifts and K-1 income raw amounts or already-limited form amounts? Are `scheduleK1.ordinaryIncome`, `partnershipIncome` and `sCorpIncome` separate streams or the same income described differently? Are tips and overtime already included in wages?
-3. **Meaning of the policy flag.** `useObbba2025: false` should change only the federal provisions OBBBA changed. It must not undo state laws passed independently for 2025.
-4. **Meaning of optimizer savings.** Illustrative screens, or amounts the engine actually recomputes? Right now overlapping estimates are summed and labelled "optimized tax".
-5. **Which source version wins.** Some state sites contradict their own dated 2025 instructions (NJ BAIT, the CA renter's credit limit, Vermont). Proposed rule: the dated 2025 form instructions take precedence.
+The remaining questions have proposed defaults. The fix PRs follow these unless they're changed:
+
+2. **Input contract.** Fields hold the amounts as they would appear on the form, except where the engine applies the limit itself (medical floor, SALT cap, capital loss limit). `scheduleK1.ordinaryIncome` is the single K-1 income field and enters total income once; `partnershipIncome` and `sCorpIncome` are treated as aliases for it. Tips and overtime are already included in wages, and `tipIncome`/`overtimeIncome` are the qualified amounts.
+3. **Meaning of the policy flag.** `useObbba2025: false` reverts only the federal provisions OBBBA changed. State law is unaffected.
+4. **Meaning of optimizer savings.** Illustrative screens, each measured alone against the baseline. They are never summed into an "optimized tax".
+5. **Which source version wins.** The dated 2025 form instructions take precedence over undated web pages.
 
 ## Method
 
